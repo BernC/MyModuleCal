@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/moduleMiniView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    <TextView
+        android:id="@+id/modMiniCodeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_span="2"
+         />
+
+    <TextView
+        android:id="@+id/firstLetterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         />
+
+    <TextView
+        android:id="@+id/shortDayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/startTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         />
+
+    <TextView
+        android:id="@+id/locationMiniTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         />
+
+    <TextView
+        android:id="@+id/dbCodeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+</TableRow>
