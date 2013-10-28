@@ -9,8 +9,8 @@ package com.bernard_05433070.mymodulecal;
 
 public final class R {
     public static final class array {
-        public static final int lecture_days=0x7f060000;
-        public static final int lecture_hours=0x7f060001;
+        public static final int lecture_days=0x7f080000;
+        public static final int lecture_hours=0x7f080001;
     }
     public static final class attr {
     }
@@ -21,85 +21,96 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f090000;
-        public static final int TableLayout1=0x7f090019;
-        public static final int action_settings=0x7f090024;
-        public static final int addCommEditText=0x7f090007;
-        public static final int addModCodeEditText=0x7f090001;
-        public static final int addModNameEditText=0x7f090002;
-        public static final int addRoomEditText=0x7f090006;
-        public static final int btn_holder=0x7f09000b;
-        public static final int button1=0x7f090017;
-        public static final int button2=0x7f090018;
-        public static final int commentTextView=0x7f090011;
-        public static final int daySpinner=0x7f090003;
-        public static final int dayTextView=0x7f090015;
-        public static final int dbCodeTextView=0x7f090023;
-        public static final int dbDisplayCodeTextView=0x7f090016;
-        public static final int deleteButton=0x7f09000d;
-        public static final int finishTextView=0x7f090013;
-        public static final int firstLetterTextView=0x7f09001f;
-        public static final int insertButton=0x7f09000c;
-        public static final int lectureRadio=0x7f090009;
-        public static final int locationMiniTextView=0x7f090022;
-        public static final int locationTextView=0x7f090014;
-        public static final int modCodeTextView=0x7f09000e;
-        public static final int modMiniCodeTextView=0x7f09001e;
-        public static final int modNameTextView=0x7f09000f;
-        public static final int moduleMiniView=0x7f09001d;
-        public static final int practicalRadio=0x7f09000a;
-        public static final int radioGroup1=0x7f090008;
-        public static final int shortDayTextView=0x7f090020;
-        public static final int startTextView=0x7f090012;
-        public static final int startTimeTextView=0x7f090021;
-        public static final int tableRow1=0x7f09001a;
-        public static final int tableRow2=0x7f09001b;
-        public static final int tableRow3=0x7f09001c;
-        public static final int timeFinishedSpinner=0x7f090005;
-        public static final int timeStartSpinner=0x7f090004;
-        public static final int typeTextView=0x7f090010;
+        public static final int LinearLayout1=0x7f0b0000;
+        public static final int TableLayout1=0x7f0b001c;
+        public static final int action_settings=0x7f0b002a;
+        public static final int addCommEditText=0x7f0b0007;
+        public static final int addModCodeEditText=0x7f0b0001;
+        public static final int addModNameEditText=0x7f0b0002;
+        public static final int addRoomEditText=0x7f0b0006;
+        public static final int btn_holder=0x7f0b000b;
+        public static final int button1=0x7f0b0017;
+        public static final int button2=0x7f0b0018;
+        public static final int button3=0x7f0b0019;
+        public static final int button4=0x7f0b001a;
+        public static final int commentTextView=0x7f0b0011;
+        public static final int daySpinner=0x7f0b0003;
+        public static final int dayTextView=0x7f0b0015;
+        public static final int dbCodeTextView=0x7f0b0026;
+        public static final int dbDisplayCodeTextView=0x7f0b0016;
+        public static final int debug=0x7f0b001b;
+        public static final int deleteButton=0x7f0b000d;
+        public static final int finishTextView=0x7f0b0013;
+        public static final int firstLetterTextView=0x7f0b0022;
+        public static final int full_widget=0x7f0b0027;
+        public static final int insertButton=0x7f0b000c;
+        public static final int lectureRadio=0x7f0b0009;
+        public static final int locationMiniTextView=0x7f0b0025;
+        public static final int locationTextView=0x7f0b0014;
+        public static final int modCodeTextView=0x7f0b000e;
+        public static final int modMiniCodeTextView=0x7f0b0021;
+        public static final int modNameTextView=0x7f0b000f;
+        public static final int moduleMiniView=0x7f0b0020;
+        public static final int practicalRadio=0x7f0b000a;
+        public static final int radioGroup1=0x7f0b0008;
+        public static final int shortDayTextView=0x7f0b0023;
+        public static final int startTextView=0x7f0b0012;
+        public static final int startTimeTextView=0x7f0b0024;
+        public static final int tableRow1=0x7f0b001d;
+        public static final int tableRow2=0x7f0b001e;
+        public static final int tableRow3=0x7f0b001f;
+        public static final int timeFinishedSpinner=0x7f0b0005;
+        public static final int timeStartSpinner=0x7f0b0004;
+        public static final int typeTextView=0x7f0b0010;
+        public static final int widgetModNameTextView=0x7f0b0028;
+        public static final int widgetStartTimeTextView=0x7f0b0029;
     }
     public static final class layout {
         public static final int activity_add_module=0x7f030000;
         public static final int activity_display_module=0x7f030001;
         public static final int activity_main=0x7f030002;
         public static final int module_row=0x7f030003;
+        public static final int modulecal_appwidget_layout=0x7f030004;
     }
     public static final class menu {
-        public static final int add_module=0x7f080000;
-        public static final int display_module=0x7f080001;
-        public static final int main=0x7f080002;
+        public static final int add_module=0x7f0a0000;
+        public static final int display_module=0x7f0a0001;
+        public static final int main=0x7f0a0002;
+    }
+    public static final class raw {
+        public static final int bell_ringing_04=0x7f050000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050001;
-        public static final int add_comments=0x7f05000c;
-        public static final int add_module_btn=0x7f050002;
-        public static final int app_name=0x7f050000;
-        public static final int cancel_deletion=0x7f050014;
-        public static final int confirm_deletion=0x7f050013;
-        public static final int day_of_week=0x7f050008;
-        public static final int delete_button=0x7f050010;
-        public static final int deletion_dialog=0x7f050012;
-        public static final int edit_button=0x7f050011;
-        public static final int finish_time=0x7f05000a;
-        public static final int hello_world=0x7f05000e;
-        public static final int insert_button=0x7f05000f;
-        public static final int location=0x7f05000b;
-        public static final int module_code=0x7f050004;
-        public static final int module_name=0x7f050005;
-        public static final int pref_btn=0x7f050003;
-        public static final int radio_lecture=0x7f050006;
-        public static final int radio_practical=0x7f050007;
-        public static final int start_time=0x7f050009;
-        public static final int title_activity_add_module=0x7f05000d;
-        public static final int title_activity_display_module=0x7f050015;
+        public static final int action_settings=0x7f070001;
+        public static final int add_comments=0x7f07000c;
+        public static final int add_module_btn=0x7f070002;
+        public static final int app_name=0x7f070000;
+        public static final int cancel_deletion=0x7f070014;
+        public static final int confirm_deletion=0x7f070013;
+        public static final int day_of_week=0x7f070008;
+        public static final int delete_button=0x7f070010;
+        public static final int deletion_dialog=0x7f070012;
+        public static final int edit_button=0x7f070011;
+        public static final int finish_time=0x7f07000a;
+        public static final int hello_world=0x7f07000e;
+        public static final int insert_button=0x7f07000f;
+        public static final int location=0x7f07000b;
+        public static final int module_code=0x7f070004;
+        public static final int module_name=0x7f070005;
+        public static final int pref_btn=0x7f070003;
+        public static final int radio_lecture=0x7f070006;
+        public static final int radio_practical=0x7f070007;
+        public static final int set_alarm=0x7f070015;
+        public static final int start_time=0x7f070009;
+        public static final int title_activity_add_module=0x7f07000d;
+        public static final int title_activity_display_module=0x7f070016;
     }
     public static final class style {
         /** 
@@ -123,10 +134,13 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f090000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f090001;
+    }
+    public static final class xml {
+        public static final int modulecal_appwidget=0x7f040000;
     }
 }

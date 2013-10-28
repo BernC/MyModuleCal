@@ -121,6 +121,41 @@ public class DBTools extends SQLiteOpenHelper{
 		
 	}
 	
+public  ArrayList<HashMap<String, String>> getTodaysModules(String day){
+		
+		SQLiteDatabase database = this.getReadableDatabase();
+		
+		ArrayList<HashMap<String, String>> moduleArrayList;
+		moduleArrayList = new ArrayList<HashMap<String, String>>();
+
+		
+		String selectQuery = "Select * FROM modules WHERE day ='" + day + "'";
+		
+		Cursor cursor = database.rawQuery(selectQuery, null);
+		
+		if(cursor.moveToFirst()){
+			do{
+				HashMap<String, String> moduleMap = new HashMap<String, String>();
+				
+				moduleMap.put("moduleId", cursor.getString(0));
+				moduleMap.put("moduleCode", cursor.getString(1));
+				moduleMap.put("moduleName", cursor.getString(2));
+				moduleMap.put("LectureOrPractical", cursor.getString(3));
+				moduleMap.put("day", cursor.getString(4));
+				moduleMap.put("startTime", cursor.getString(5));
+				moduleMap.put("finishTime", cursor.getString(6));
+				moduleMap.put("Location", cursor.getString(7));
+				moduleMap.put("addComments", cursor.getString(8));
+				
+				moduleArrayList.add(moduleMap);
+
+			}while(cursor.moveToNext());
+		}
+		
+		return moduleArrayList;
+		
+	}
+	
 	public HashMap <String, String> getModule(String id){
 		
 		SQLiteDatabase database = this.getReadableDatabase();
