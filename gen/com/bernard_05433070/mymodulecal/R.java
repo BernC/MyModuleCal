@@ -30,7 +30,7 @@ public final class R {
     public static final class id {
         public static final int LinearLayout1=0x7f0b0000;
         public static final int TableLayout1=0x7f0b001c;
-        public static final int action_settings=0x7f0b002a;
+        public static final int action_settings=0x7f0b002c;
         public static final int addCommEditText=0x7f0b0007;
         public static final int addModCodeEditText=0x7f0b0001;
         public static final int addModNameEditText=0x7f0b0002;
@@ -63,14 +63,16 @@ public final class R {
         public static final int shortDayTextView=0x7f0b0023;
         public static final int startTextView=0x7f0b0012;
         public static final int startTimeTextView=0x7f0b0024;
+        public static final int stockQuoteRow=0x7f0b0029;
         public static final int tableRow1=0x7f0b001d;
         public static final int tableRow2=0x7f0b001e;
         public static final int tableRow3=0x7f0b001f;
         public static final int timeFinishedSpinner=0x7f0b0005;
         public static final int timeStartSpinner=0x7f0b0004;
         public static final int typeTextView=0x7f0b0010;
-        public static final int widgetModNameTextView=0x7f0b0028;
-        public static final int widgetStartTimeTextView=0x7f0b0029;
+        public static final int widgetModName=0x7f0b0028;
+        public static final int widgetModNameTextView=0x7f0b002a;
+        public static final int widgetModTimeTextView=0x7f0b002b;
     }
     public static final class layout {
         public static final int activity_add_module=0x7f030000;
@@ -78,6 +80,7 @@ public final class R {
         public static final int activity_main=0x7f030002;
         public static final int module_row=0x7f030003;
         public static final int modulecal_appwidget_layout=0x7f030004;
+        public static final int row=0x7f030005;
     }
     public static final class menu {
         public static final int add_module=0x7f0a0000;
