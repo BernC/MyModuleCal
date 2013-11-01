@@ -121,7 +121,7 @@ public class DBTools extends SQLiteOpenHelper{
 		
 	}
 	
-public  ArrayList<HashMap<String, String>> getTodaysModules(String day){
+public  ArrayList<HashMap<String, String>> getTodaysModules(String day,String time){
 		
 		SQLiteDatabase database = this.getReadableDatabase();
 		
@@ -129,7 +129,7 @@ public  ArrayList<HashMap<String, String>> getTodaysModules(String day){
 		moduleArrayList = new ArrayList<HashMap<String, String>>();
 
 		
-		String selectQuery = "Select * FROM modules WHERE day ='" + day + "'";
+		String selectQuery = "Select * FROM modules WHERE day ='" + day + "' AND startTime > '"+ time + "'";
 		
 		Cursor cursor = database.rawQuery(selectQuery, null);
 		
