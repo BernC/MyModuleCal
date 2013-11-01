@@ -66,10 +66,10 @@ public class ModuleCalWidgetProvider extends AppWidgetProvider {
 		
 		HashMap<String, String> checker = moduleList.get(0);
 		
-		Log.e(DEBUG_TAG, checker.get("moduleName"));
+		//Log.e(DEBUG_TAG, checker.get("moduleName"));
 		int time = calendar.get(Calendar.HOUR_OF_DAY);
 		String timestring = Integer.toString(time) + ".00";
-		Log.e(DEBUG_TAG,Integer.toString(checje));
+		Log.e(DEBUG_TAG,checker.get("startTime"));
 		
 		remoteView.setTextViewText(R.id.widgetModName, checker.get("moduleName"));
 		//remoteView.setTextViewText(R.id.widgetStartTimeTextView, "12.00");

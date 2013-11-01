@@ -80,6 +80,9 @@ public class Add_module extends Activity {
 		queryValues.put("finishTime", timeFinishedSpinner.getItemAtPosition(timeFinishedSpinner.getSelectedItemPosition()).toString());
 		queryValues.put("Location", addRoomEditText.getText().toString());
 		queryValues.put("addComments", addCommEditText.getText().toString());
+		queryValues.put("timeValue",  getResources().getStringArray(R.array.hours_values)[timeStartSpinner.getSelectedItemPosition()]);
+
+		
 		
 		//run the query
 		dbTools.insertModule(queryValues);

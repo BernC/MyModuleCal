@@ -9,6 +9,7 @@ package com.bernard_05433070.mymodulecal;
 
 public final class R {
     public static final class array {
+        public static final int hours_values=0x7f080002;
         public static final int lecture_days=0x7f080000;
         public static final int lecture_hours=0x7f080001;
     }

@@ -20,7 +20,7 @@ public class DBTools extends SQLiteOpenHelper{
 	@Override
 	public void onCreate(SQLiteDatabase database) {
 		
-		String query = "CREATE TABLE modules ( moduleID INTEGER PRIMARY KEY AUTOINCREMENT, moduleCode TEXT, moduleName TEXT, LectureOrPractical TEXT, day TEXT, startTime TEXT, finishTime TEXT, Location TEXT, addComments TEXT)";
+		String query = "CREATE TABLE modules ( moduleID INTEGER PRIMARY KEY AUTOINCREMENT, moduleCode TEXT, moduleName TEXT, LectureOrPractical TEXT, day TEXT, startTime TEXT, finishTime TEXT, Location TEXT, addComments TEXT, timeValue INT)";
 		
 		database.execSQL(query);
 		
@@ -50,6 +50,8 @@ public class DBTools extends SQLiteOpenHelper{
 		values.put("finishTime", queryValues.get("finishTime"));
 		values.put("Location", queryValues.get("Location"));
 		values.put("addComments", queryValues.get("addComments"));
+		values.put("timeValue", queryValues.get("timeValue"));
+
 		
 		database.insert("modules", null, values);
 		
@@ -72,6 +74,8 @@ public class DBTools extends SQLiteOpenHelper{
 		values.put("finishTime", queryValues.get("finishTime"));
 		values.put("Location", queryValues.get("Location"));
 		values.put("addComments", queryValues.get("addComments"));
+		values.put("timeValue", Integer.parseInt(queryValues.get("timeValue")));
+
 		
 		return database.update("modules", values, "moduleID" + " = ?", new String[] { queryValues.get("moduleID")});
 
@@ -111,6 +115,7 @@ public class DBTools extends SQLiteOpenHelper{
 				moduleMap.put("finishTime", cursor.getString(6));
 				moduleMap.put("Location", cursor.getString(7));
 				moduleMap.put("addComments", cursor.getString(8));
+
 				
 				moduleArrayList.add(moduleMap);
 			}while(cursor.moveToNext());
@@ -129,7 +134,7 @@ public  ArrayList<HashMap<String, String>> getTodaysModules(String day,String ti
 		moduleArrayList = new ArrayList<HashMap<String, String>>();
 
 		
-		String selectQuery = "Select * FROM modules WHERE day ='" + day + "' AND startTime > '"+ time + "'";
+		String selectQuery = "Select * FROM modules WHERE day ='" + day + "' AND timeValue > "+ time + "";
 		
 		Cursor cursor = database.rawQuery(selectQuery, null);
 		
