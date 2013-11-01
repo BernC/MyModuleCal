@@ -60,7 +60,7 @@ public class DBTools extends SQLiteOpenHelper{
 
 	}
 	
-	public int updateContact(HashMap<String, String> queryValues){
+	public int updateContact(HashMap<String, String> queryValues,String key){
 		
 		SQLiteDatabase database = this.getWritableDatabase();
 		
@@ -77,7 +77,7 @@ public class DBTools extends SQLiteOpenHelper{
 		values.put("timeValue", Integer.parseInt(queryValues.get("timeValue")));
 
 		
-		return database.update("modules", values, "moduleID" + " = ?", new String[] { queryValues.get("moduleID")});
+		return database.update("modules", values, "moduleID" + " = ?", new String[] { key});
 
 	}
 	

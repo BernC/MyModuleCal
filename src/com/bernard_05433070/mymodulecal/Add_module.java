@@ -35,6 +35,8 @@ public class Add_module extends Activity {
 	RadioButton buttonPractical;
 	RadioButton buttonLecture;
 	DBTools dbTools = new DBTools(this);
+	int id;
+	String module_to_edit;
 	
 
 	@Override
@@ -55,9 +57,8 @@ public class Add_module extends Activity {
 		buttonLecture = (RadioButton)findViewById(R.id.lectureRadio);
 		
 		Intent myIntent = getIntent();
-		String module_to_edit = myIntent.getStringExtra("moduleId");
+		module_to_edit = myIntent.getStringExtra("moduleId");
 		
-		int id;
 		try{
 		id = Integer.parseInt(module_to_edit);
 		}catch (Exception e){
@@ -144,7 +145,12 @@ public class Add_module extends Activity {
 		
 		
 		//run the query
+		if(id != 0)
+		{
+		dbTools.updateContact(queryValues, module_to_edit);
+		}else{
 		dbTools.insertModule(queryValues);
+		}
 		
 		//call back the main activity screen
 		
