@@ -1,12 +1,15 @@
 package com.bernard_05433070.mymodulecal;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -18,6 +21,9 @@ import android.content.Intent;
 import android.os.Build;
 
 public class Add_module extends Activity {
+	
+	public static final String DEBUG_TAG = "Add_module";
+
 	
 	EditText addModCodeEditText;
 	EditText addModNameEditText;
@@ -47,7 +53,60 @@ public class Add_module extends Activity {
 		timeFinishedSpinner = (Spinner)findViewById(R.id.timeFinishedSpinner);
 		buttonPractical = (RadioButton)findViewById(R.id.practicalRadio);
 		buttonLecture = (RadioButton)findViewById(R.id.lectureRadio);
+		
+		Intent myIntent = getIntent();
+		String module_to_edit = myIntent.getStringExtra("moduleId");
+		
+		int id;
+		try{
+		id = Integer.parseInt(module_to_edit);
+		}catch (Exception e){
+			id = 0;
+		}
+		
+		Log.e(DEBUG_TAG, "got to just outside if");
+    	ArrayList<String> days = new ArrayList<String>();
+    	
+    	days.add("Monday");
+    	days.add("Tuesday");
+    	days.add("Wednesday");
+    	days.add("Thursday");
+    	days.add("Friday");
+    	
+    	ArrayList<String> hours = new ArrayList<String>();
+    	
+        hours.add("9.00");
+        hours.add("10.00");
+        hours.add("11.00");
+        hours.add("12.00");
+        hours.add("13.00");
+        hours.add("14.00");
+        hours.add("15.00");
+        hours.add("16.00");
+        hours.add("17.00");
+        hours.add("18.00");
+        hours.add("19.00");
+		
+		if(id != 0){
+			Log.e(DEBUG_TAG, "got in here");
+			HashMap <String, String> moduleDetails = dbTools.getModule(module_to_edit);
+			
+			addModCodeEditText.setText(moduleDetails.get("moduleCode")); 
+			addModNameEditText.setText(moduleDetails.get("moduleName")); 
+			addCommEditText.setText(moduleDetails.get("addComments")); 
+			addRoomEditText.setText(moduleDetails.get("Location")); 
+			timeStartSpinner.setSelection(hours.indexOf(moduleDetails.get("startTime")));
+			timeFinishedSpinner.setSelection(hours.indexOf(moduleDetails.get("finishTime")));
+			daySpinner.setSelection(days.indexOf(moduleDetails.get("day")));
+			
+			if(moduleDetails.get("LectureOrPractical") == "Practical"){
+				buttonPractical.setChecked(true);
+			}else{
+				buttonLecture.setChecked(true);
+			}
 
+			
+		}
 		
 		
 

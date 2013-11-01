@@ -1,15 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/full_widget"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="3dp"
     android:layout_marginTop="3dp"
-    android:orientation="vertical"
-    android:id="@+id/full_widget" >
+    android:background="@color/orange"
+    android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/widgetModName"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/widget_title" />
+
+    <LinearLayout
+        android:id="@+id/top_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/widgetModName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/widgetStartTime"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/widget_label" />
+
+    <TextView
+        android:id="@+id/widgetLocation"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
 

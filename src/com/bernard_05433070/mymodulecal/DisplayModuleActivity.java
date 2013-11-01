@@ -10,6 +10,7 @@ import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +26,8 @@ import android.os.Build;
 
 public class DisplayModuleActivity extends Activity {
 	
+	public static final String DEBUG_TAG = "DisplayModuleActivity";
+	
 	TextView modCodeTextView;
 	TextView modNameTextView;
 	TextView typeTextView;
@@ -34,6 +37,11 @@ public class DisplayModuleActivity extends Activity {
 	TextView locationTextView;
 	TextView dayTextView;
 	String moduleName;
+	
+	String[] days = {"Monday","Tuesday","Wednesday","Thursday","Friday"};
+	
+
+	
 	//TextView dbDisplayCodeTextView;
 	
 	DBTools dbtools = new DBTools(this);
@@ -54,6 +62,8 @@ public class DisplayModuleActivity extends Activity {
 		
 		//possible troublemaker
 		id = myIntent.getStringExtra("moduleId");
+		
+		Log.e(DEBUG_TAG, id);
 		
 		modCodeTextView = (TextView) findViewById(R.id.modCodeTextView);
 		modNameTextView = (TextView) findViewById(R.id.modNameTextView);
@@ -112,6 +122,7 @@ public class DisplayModuleActivity extends Activity {
 		Intent editIntent = new Intent(getApplication(), Add_module.class);
 		
 		//send the mod db id
+		Log.e(DEBUG_TAG, id);
 		editIntent.putExtra("moduleId",id);
 		
 		//callIntent

@@ -58,6 +58,7 @@ public class ModuleCalWidgetProvider extends AppWidgetProvider {
 		break;
 		}
 		
+		int time = calendar.get(Calendar.HOUR_OF_DAY);
 		String hourString = "16";
 		int checje = Integer.parseInt(hourString);
 		
@@ -67,12 +68,12 @@ public class ModuleCalWidgetProvider extends AppWidgetProvider {
 		HashMap<String, String> checker = moduleList.get(0);
 		
 		//Log.e(DEBUG_TAG, checker.get("moduleName"));
-		int time = calendar.get(Calendar.HOUR_OF_DAY);
-		String timestring = Integer.toString(time) + ".00";
+		
 		Log.e(DEBUG_TAG,checker.get("startTime"));
 		
 		remoteView.setTextViewText(R.id.widgetModName, checker.get("moduleName"));
-		//remoteView.setTextViewText(R.id.widgetStartTimeTextView, "12.00");
+		remoteView.setTextViewText(R.id.widgetStartTime, checker.get("startTime"));
+		remoteView.setTextViewText(R.id.widgetLocation, checker.get("Location"));
 		
 		Intent launchAppIntent = new Intent(context, MainActivity.class);
 		PendingIntent launchAppPendingIntent = PendingIntent.getActivity(context, 0, launchAppIntent, PendingIntent.FLAG_UPDATE_CURRENT);

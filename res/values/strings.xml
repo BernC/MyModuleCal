@@ -23,7 +23,11 @@
     <string name="confirm_deletion">OK</string>
     <string name="cancel_deletion">Cancel</string>
     <string name="set_alarm">Set Alarm</string>
-    
+    <string name="widget_title">Next Module</string>
+    <string name="widget_label">Location</string>
+    <string name="widget_default">Next Module</string>
+    <string name="widget_default_loc">Location</string>
+    <color name="orange">#FF7F00</color>
     
     
     
@@ -63,6 +67,8 @@
         <item>19</item>
     </string-array>
     
+      
+       <color name="white">#ffffff</color>
     
 
     <string name="title_activity_display_module">DisplayModuleActivity</string>
