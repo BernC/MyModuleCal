@@ -51,45 +51,101 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
-       
+
     <TextView
         android:id="@+id/dbDisplayCodeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
-    <Button
-        android:id="@+id/button1"
+    <TableLayout
+        android:id="@+id/button_container"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="deleteEntry"
-        android:text="@string/delete_button" />
+        android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="updateEntry"
-        android:text="@string/edit_button" />
+        <TableRow
+            android:id="@+id/top_row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="setAlarm"
-        android:text="@string/set_alarm" />
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="deleteEntry"
+                android:text="@string/delete_button" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:onClick="cancelAlarm" />
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="updateEntry"
+                android:text="@string/edit_button" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/btm_row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="setAlarm"
+                android:text="@string/set_alarm" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="cancelAlarm"
+                android:text="@string/cancel_alarm" />
+        </TableRow>
+    </TableLayout>
 
     <TextView
         android:id="@+id/debug"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView" />
+
+    <TextView
+        android:id="@+id/timeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/atTimeAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/at_time" />
+
+        <RadioButton
+            android:id="@+id/fiveBeforeAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/five_before" />
+
+        <RadioButton
+            android:id="@+id/tenBeforeAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ten_before" />
+
+        <RadioButton
+            android:id="@+id/fifteenBeforeAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/fifteen_before" />
+    </RadioGroup>
 
 </LinearLayout>

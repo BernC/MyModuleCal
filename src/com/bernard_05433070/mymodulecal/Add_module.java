@@ -147,6 +147,7 @@ public class Add_module extends Activity {
 		//run the query
 		if(id != 0)
 		{
+			//need to add time value field into update
 		dbTools.updateContact(queryValues, module_to_edit);
 		}else{
 		dbTools.insertModule(queryValues);

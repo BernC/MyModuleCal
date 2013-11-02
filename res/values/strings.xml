@@ -23,10 +23,17 @@
     <string name="confirm_deletion">OK</string>
     <string name="cancel_deletion">Cancel</string>
     <string name="set_alarm">Set Alarm</string>
+    <string name="cancel_alarm">Set Alarm</string>
     <string name="widget_title">Next Module</string>
     <string name="widget_label">Location</string>
     <string name="widget_default">Next Module</string>
     <string name="widget_default_loc">Location</string>
+    <string name="at_time">At Time</string>
+    <string name="five_before">5 Before</string>
+    <string name="ten_before">10 Before</string>
+    <string name="fifteen_before">15 Before</string>
+    <string name="alarm_options">Alarm Options</string>
+            
     <color name="orange">#FF7F00</color>
     
     

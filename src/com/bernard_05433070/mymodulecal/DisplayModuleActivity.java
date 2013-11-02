@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v4.app.NavUtils;
@@ -26,7 +27,7 @@ import android.os.Build;
 
 public class DisplayModuleActivity extends Activity {
 	
-	public static final String DEBUG_TAG = "DisplayModuleActivity";
+	public static final String DEBUG_TAG = "AlarmDebug";
 	
 	TextView modCodeTextView;
 	TextView modNameTextView;
@@ -36,6 +37,11 @@ public class DisplayModuleActivity extends Activity {
 	TextView finishTextView;
 	TextView locationTextView;
 	TextView dayTextView;
+	TextView timeValue;
+	RadioButton atTime;
+	RadioButton five_before;
+	RadioButton ten_before;
+	RadioButton fifteen_before;
 	String moduleName;
 	
 	String[] days = {"Monday","Tuesday","Wednesday","Thursday","Friday"};
@@ -73,7 +79,12 @@ public class DisplayModuleActivity extends Activity {
 		finishTextView = (TextView) findViewById(R.id.finishTextView);
 		locationTextView = (TextView) findViewById(R.id.locationTextView);
 		dayTextView = (TextView) findViewById(R.id.dayTextView);
-		//dbDisplayCodeTextView = (TextView) findViewByID(R.id.dbDisplayCodeTextView);
+		timeValue = (TextView) findViewById(R.id.timeValue);
+		atTime = (RadioButton) findViewById(R.id.atTimeAlarm);
+		five_before = (RadioButton) findViewById(R.id.fiveBeforeAlarm);
+		ten_before = (RadioButton) findViewById(R.id.tenBeforeAlarm);
+		fifteen_before = (RadioButton) findViewById(R.id.fifteenBeforeAlarm);
+
 		
 			
 		HashMap <String, String> moduleDetails = dbtools.getModule(id);
@@ -88,6 +99,7 @@ public class DisplayModuleActivity extends Activity {
 		finishTextView.setText(moduleDetails.get("finishTime")); 
 		locationTextView.setText(moduleDetails.get("Location")); 
 		dayTextView.setText(moduleDetails.get("day")); 
+		timeValue.setText(moduleDetails.get("timeValue"));
 		
 		
 		
@@ -148,46 +160,76 @@ public void timerAlert(View v) {
 		
 		AlarmManager myAlarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 		
-		int day;
+		Calendar now = Calendar.getInstance();
+        int weekday = now.get(Calendar.DAY_OF_WEEK);
 		
-		Calendar calendar = Calendar.getInstance();
-		day = calendar.get(Calendar.DAY_OF_WEEK);
+		int alarm_min;
+		int alarm_hour = Integer.parseInt(timeValue.getText().toString());
 		
-		
-		if(calendar.get(Calendar.DAY_OF_WEEK) != day)
-	     {
-	         if(day > calendar.get(Calendar.DAY_OF_WEEK))
-	         {
-	             calendar.add(Calendar.DAY_OF_MONTH, day - calendar.get(Calendar.DAY_OF_WEEK));
-	         }
+		if(atTime.isChecked()){
+			alarm_min = 0;
+		}else if(five_before.isChecked()){
+			alarm_min = 55;
+			alarm_hour = alarm_hour - 1;
+		}else if(ten_before.isChecked()){
+			alarm_min = 50;
+			alarm_hour = alarm_hour - 1;
+		}else{
+			alarm_min = 45;
+			alarm_hour = alarm_hour - 1;
+		}
 
-	         if(day < calendar.get(Calendar.DAY_OF_WEEK))
-	         {
-	             calendar.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
-	             if(day > 1)
-	             {
-	                 calendar.add(Calendar.DAY_OF_MONTH, 7 - (calendar.get(Calendar.DAY_OF_WEEK) - day));
-	             }
-	         }
-	     }
-		/*
-		calendar.add(Calendar.DATE, day);
-		*/
-		calendar.set(Calendar.HOUR, 22);
-		calendar.set(Calendar.MINUTE, 0);
-		calendar.set(Calendar.SECOND, 0);
-
-		TextView debug = (TextView) findViewById(R.id.debug);
-		String s = String.valueOf(calendar.getTimeInMillis());
-		debug.setText(s);
+		int offset = 0;
+		int required_day = 0;
+		String fromDB = dayTextView.getText().toString();
+        
+        if(fromDB == "Monday"){
+        required_day = Calendar.MONDAY;
+        offset = 2;
+        }else if(fromDB == "Tuesday"){       
+            required_day = Calendar.TUESDAY;
+            offset = 3;
+        }else if(fromDB == "Wednesday"){       
+            required_day = Calendar.WEDNESDAY;
+            offset = 4;
+        }else if(fromDB == "Thursday"){       
+            required_day = Calendar.THURSDAY;
+            offset = 5;
+        }else if(fromDB == "Friday"){
+        	required_day = Calendar.FRIDAY;
+            offset = 6;
+        }
 		
-		/*
-		myAlarmManager.set(AlarmManager.RTC_WAKEUP, timeOff.getTimeInMillis(), myPendingIntent);
-		//myAlarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+(i*1000), myPendingIntent);
-
-		*/
+        if (weekday != required_day)
+        {
+            // calculate how much to add
+            // the 2 is the difference between Saturday and Monday
+            int dayes = (Calendar.SATURDAY - weekday + offset) % 7;
+            now.add(Calendar.DAY_OF_YEAR, dayes);
+            now.set(Calendar.HOUR_OF_DAY, alarm_hour);
+            now.set(Calendar.MINUTE, alarm_min);
+        }else{
+        	if((Calendar.HOUR_OF_DAY) < alarm_hour ){
+        		now.set(Calendar.HOUR_OF_DAY, alarm_hour);
+            	now.set(Calendar.MINUTE, alarm_min);
+        	}else{
+        	now.add(Calendar.DAY_OF_YEAR, 7);
+        	now.set(Calendar.HOUR_OF_DAY, alarm_hour);
+        	now.set(Calendar.MINUTE, alarm_min);
+        	}
+        }
 		
-		Toast.makeText(this, "Alarm is set for " + i + "seconds", Toast.LENGTH_LONG).show();
+		
+		
+		
+		
+		
+		myAlarmManager.set(AlarmManager.RTC_WAKEUP, now.getTimeInMillis(), myPendingIntent);
+		myAlarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+(i*1000), myPendingIntent);
+
+		
+		
+		Toast.makeText(this, "Alarm has been Set", Toast.LENGTH_LONG).show();
 	}
 
 public void cancelAlarm(View v) {
@@ -198,7 +240,7 @@ public void cancelAlarm(View v) {
 	timerIntent.putExtra("moduleName", moduleName);
 	
 	PendingIntent myPendingIntent = PendingIntent.getBroadcast(this.getApplicationContext(), alarmId, timerIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-	
+	Toast.makeText(this, "Alarm Cancelled", Toast.LENGTH_LONG).show();
 	
 	
 }
