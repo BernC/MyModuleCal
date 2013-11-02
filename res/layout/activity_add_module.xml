@@ -50,13 +50,15 @@
         android:id="@+id/addRoomEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10" />
+        android:ems="10"
+        android:hint="@string/location" />
 
     <EditText
         android:id="@+id/addCommEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10" />
+        android:ems="10"
+        android:hint="@string/add_comments" />
 
     <RadioGroup
         android:id="@+id/radioGroup1"
@@ -90,14 +92,6 @@
             android:layout_weight="1"
             android:onClick="insertModule"
             android:text="@string/insert_button" />
-
-        <Button
-            android:id="@+id/deleteButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="deleteModule"
-            android:text="@string/delete_button" />
 
     </LinearLayout>
 

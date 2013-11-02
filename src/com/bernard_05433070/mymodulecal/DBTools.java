@@ -109,8 +109,11 @@ public class DBTools extends SQLiteOpenHelper{
 				moduleMap.put("moduleId", cursor.getString(0));
 				moduleMap.put("moduleCode", cursor.getString(1));
 				moduleMap.put("moduleName", cursor.getString(2));
-				moduleMap.put("LectureOrPractical", cursor.getString(3));
-				moduleMap.put("day", cursor.getString(4));
+				char Letter = cursor.getString(3).charAt(0);
+				String firstLetter = String.valueOf(Letter);
+				moduleMap.put("LectureOrPractical", firstLetter);
+				String shortDay = cursor.getString(4).substring(0,3);
+				moduleMap.put("day", shortDay);
 				moduleMap.put("startTime", cursor.getString(5));
 				moduleMap.put("finishTime", cursor.getString(6));
 				moduleMap.put("Location", cursor.getString(7));

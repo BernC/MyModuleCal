@@ -31,6 +31,8 @@ public class MainActivity extends ListActivity {
 		
 		ArrayList<HashMap <String, String>> moduleList = dbtools.getAllModules();
 		
+		
+		
 		if(moduleList.size() != 0){
 			//get list view
 			ListView listview = getListView();
