@@ -70,6 +70,12 @@ public class MainActivity extends ListActivity {
 		Intent myIntent = new Intent(getApplication(), Add_module.class);
 		startActivity(myIntent);
 	}
+	
+	public void setTheme(View v){
+		
+		getApplication().setTheme(R.style.BlackTheme);
+		recreate();
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

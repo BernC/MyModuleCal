@@ -23,7 +23,7 @@
     <string name="confirm_deletion">OK</string>
     <string name="cancel_deletion">Cancel</string>
     <string name="set_alarm">Set Alarm</string>
-    <string name="cancel_alarm">Set Alarm</string>
+    <string name="cancel_alarm">Cancel Alarm</string>
     <string name="widget_title">Next Module</string>
     <string name="widget_label">Location</string>
     <string name="widget_default">Next Module</string>
@@ -33,6 +33,7 @@
     <string name="ten_before">10 Before</string>
     <string name="fifteen_before">15 Before</string>
     <string name="alarm_options">Alarm Options</string>
+    <string name="mod_type">Type</string>
             
     <color name="orange">#FF7F00</color>
     
@@ -75,9 +76,16 @@
     </string-array>
     
       
-       <color name="white">#ffffff</color>
+      <color name="white">#ffffff</color>
+      <color name="bg_color">#E5E4E2</color> 
     
 
     <string name="title_activity_display_module">DisplayModuleActivity</string>
+    
+
+    <string name="mod_comments">Comments: </string>
+    
+
+    
 
 </resources>

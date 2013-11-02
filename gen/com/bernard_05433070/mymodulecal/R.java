@@ -16,6 +16,7 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int bg_color=0x7f080002;
         public static final int orange=0x7f080000;
         public static final int white=0x7f080001;
     }
@@ -31,68 +32,85 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
+        public static final int rounded_buttons=0x7f020001;
+        public static final int text_borders=0x7f020002;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f0c0000;
-        public static final int TableLayout1=0x7f0c0023;
-        public static final int action_settings=0x7f0c003b;
+        public static final int TableLayout1=0x7f0c0032;
+        public static final int action_settings=0x7f0c004a;
         public static final int addCommEditText=0x7f0c0007;
         public static final int addModCodeEditText=0x7f0c0001;
         public static final int addModNameEditText=0x7f0c0002;
         public static final int addRoomEditText=0x7f0c0006;
-        public static final int atTimeAlarm=0x7f0c001f;
-        public static final int btm_row=0x7f0c001a;
+        public static final int atTimeAlarm=0x7f0c0027;
+        public static final int btm_row=0x7f0c002f;
         public static final int btn_holder=0x7f0c000b;
-        public static final int button1=0x7f0c0018;
-        public static final int button2=0x7f0c0019;
-        public static final int button3=0x7f0c001b;
-        public static final int button4=0x7f0c001c;
-        public static final int button_container=0x7f0c0016;
-        public static final int commentTextView=0x7f0c0010;
+        public static final int button1=0x7f0c002d;
+        public static final int button2=0x7f0c002e;
+        public static final int button3=0x7f0c0030;
+        public static final int button4=0x7f0c0031;
+        public static final int button_container=0x7f0c002b;
+        public static final int commentTextView=0x7f0c0023;
         public static final int daySpinner=0x7f0c0003;
-        public static final int dayTextView=0x7f0c0014;
-        public static final int dbCodeTextView=0x7f0c0030;
-        public static final int dbDisplayCodeTextView=0x7f0c0015;
-        public static final int debug=0x7f0c001d;
-        public static final int deleteButton=0x7f0c0027;
-        public static final int fifteenBeforeAlarm=0x7f0c0022;
-        public static final int finishTextView=0x7f0c0012;
-        public static final int firstLetterTextView=0x7f0c002b;
-        public static final int fiveBeforeAlarm=0x7f0c0020;
-        public static final int full_widget=0x7f0c0031;
+        public static final int dayTextView=0x7f0c001e;
+        public static final int dbCodeTextView=0x7f0c003f;
+        public static final int dbDisplayCodeTextView=0x7f0c0024;
+        public static final int debug=0x7f0c0025;
+        public static final int deleteButton=0x7f0c0036;
+        public static final int fifteenBeforeAlarm=0x7f0c002a;
+        public static final int finishTextView=0x7f0c001d;
+        public static final int firstLetterTextView=0x7f0c003a;
+        public static final int fiveBeforeAlarm=0x7f0c0028;
+        public static final int full_widget=0x7f0c0040;
+        public static final int info_table=0x7f0c000d;
         public static final int insertButton=0x7f0c000c;
         public static final int lectureRadio=0x7f0c0009;
-        public static final int locationMiniTextView=0x7f0c002f;
-        public static final int locationTextView=0x7f0c0013;
-        public static final int lower_row=0x7f0c002c;
-        public static final int modCodeTextView=0x7f0c000d;
-        public static final int modMiniCodeTextView=0x7f0c002a;
-        public static final int modNameTextView=0x7f0c000e;
-        public static final int moduleMiniView=0x7f0c0028;
+        public static final int locationMiniTextView=0x7f0c003e;
+        public static final int locationTextView=0x7f0c0021;
+        public static final int location_row=0x7f0c001f;
+        public static final int lower_row=0x7f0c003b;
+        public static final int modCodeTextView=0x7f0c0010;
+        public static final int modMiniCodeTextView=0x7f0c0039;
+        public static final int modNameTextView=0x7f0c0013;
+        public static final int mod_code_row=0x7f0c000e;
+        public static final int mod_name_row=0x7f0c0011;
+        public static final int moduleMiniView=0x7f0c0037;
         public static final int practicalRadio=0x7f0c000a;
         public static final int radioGroup1=0x7f0c0008;
-        public static final int shortDayTextView=0x7f0c002d;
-        public static final int startTextView=0x7f0c0011;
-        public static final int startTimeTextView=0x7f0c002e;
-        public static final int stockQuoteRow=0x7f0c0038;
-        public static final int tableRow1=0x7f0c0024;
-        public static final int tableRow2=0x7f0c0025;
-        public static final int tableRow3=0x7f0c0026;
-        public static final int tenBeforeAlarm=0x7f0c0021;
-        public static final int textView3=0x7f0c0032;
-        public static final int textView4=0x7f0c0036;
+        public static final int shortDayTextView=0x7f0c003c;
+        public static final int startTextView=0x7f0c001c;
+        public static final int startTimeTextView=0x7f0c003d;
+        public static final int stockQuoteRow=0x7f0c0047;
+        public static final int tableRow1=0x7f0c0033;
+        public static final int tableRow2=0x7f0c0034;
+        public static final int tableRow3=0x7f0c0035;
+        public static final int tenBeforeAlarm=0x7f0c0029;
+        public static final int textView1=0x7f0c000f;
+        public static final int textView2=0x7f0c0012;
+        public static final int textView3=0x7f0c0015;
+        public static final int textView4=0x7f0c0018;
+        public static final int textView5=0x7f0c0019;
+        public static final int textView6=0x7f0c001a;
+        public static final int textView7=0x7f0c0020;
+        public static final int textView8=0x7f0c0022;
         public static final int timeFinishedSpinner=0x7f0c0005;
         public static final int timeStartSpinner=0x7f0c0004;
-        public static final int timeValue=0x7f0c001e;
-        public static final int top_row=0x7f0c0017;
-        public static final int top_view=0x7f0c0033;
-        public static final int typeTextView=0x7f0c000f;
-        public static final int upper_row=0x7f0c0029;
-        public static final int widgetLocation=0x7f0c0037;
-        public static final int widgetModName=0x7f0c0034;
-        public static final int widgetModNameTextView=0x7f0c0039;
-        public static final int widgetModTimeTextView=0x7f0c003a;
-        public static final int widgetStartTime=0x7f0c0035;
+        public static final int timeValue=0x7f0c0026;
+        public static final int time_info=0x7f0c001b;
+        public static final int time_labels=0x7f0c0017;
+        public static final int top_row=0x7f0c002c;
+        public static final int top_view=0x7f0c0041;
+        public static final int typeTextView=0x7f0c0016;
+        public static final int type_row=0x7f0c0014;
+        public static final int upper_row=0x7f0c0038;
+        public static final int widgetLocation=0x7f0c0046;
+        public static final int widgetModName=0x7f0c0042;
+        public static final int widgetModNameTextView=0x7f0c0048;
+        public static final int widgetModTimeTextView=0x7f0c0049;
+        public static final int widgetStartTime=0x7f0c0044;
+        public static final int widget_start_time_row=0x7f0c0043;
+        public static final int wodget_location_row=0x7f0c0045;
     }
     public static final class layout {
         public static final int activity_add_module=0x7f030000;
@@ -130,6 +148,8 @@ public final class R {
         public static final int hello_world=0x7f07000e;
         public static final int insert_button=0x7f07000f;
         public static final int location=0x7f07000b;
+        public static final int mod_comments=0x7f070022;
+        public static final int mod_type=0x7f070020;
         public static final int module_code=0x7f070004;
         public static final int module_name=0x7f070005;
         public static final int pref_btn=0x7f070003;
@@ -139,7 +159,7 @@ public final class R {
         public static final int start_time=0x7f070009;
         public static final int ten_before=0x7f07001d;
         public static final int title_activity_add_module=0x7f07000d;
-        public static final int title_activity_display_module=0x7f070020;
+        public static final int title_activity_display_module=0x7f070021;
         public static final int widget_default=0x7f070019;
         public static final int widget_default_loc=0x7f07001a;
         public static final int widget_label=0x7f070018;
@@ -172,6 +192,8 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f0a0001;
+        public static final int BlackTheme=0x7f0a0002;
+        public static final int BlueTheme=0x7f0a0003;
     }
     public static final class xml {
         public static final int modulecal_appwidget=0x7f040000;
