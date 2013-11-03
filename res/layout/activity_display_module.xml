@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/bg_color" >
+    >
 
     <TableLayout
         android:id="@+id/info_table"
@@ -222,22 +222,22 @@
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/largeTheme"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:onClick="deleteEntry"
                 android:text="@string/delete_button"
-                android:background="@drawable/rounded_buttons" />
+                 />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/lightTheme"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:onClick="updateEntry"
                 android:text="@string/edit_button"
-                android:background="@drawable/rounded_buttons" />
+                 />
         </TableRow>
 
         <TableRow
@@ -252,7 +252,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="setAlarm"
                 android:text="@string/set_alarm"
-                android:background="@drawable/rounded_buttons" />
+                 />
 
             <Button
                 android:id="@+id/button4"
@@ -261,7 +261,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="cancelAlarm"
                 android:text="@string/cancel_alarm"
-                android:background="@drawable/rounded_buttons" />
+                 />
         </TableRow>
     </TableLayout>
 

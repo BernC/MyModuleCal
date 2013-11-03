@@ -2,6 +2,7 @@ package com.bernard_05433070.mymodulecal;
 
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.TimeZone;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -58,6 +59,7 @@ public class DisplayModuleActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		themeUtils.onActivityCreateSetTheme(this);
 		setContentView(R.layout.activity_display_module);
 		// Show the Up button in the action bar.
 		setupActionBar();
@@ -164,8 +166,12 @@ public void timerAlert(View v) {
         int weekday = now.get(Calendar.DAY_OF_WEEK);
 		
 		int alarm_min;
-		int alarm_hour = Integer.parseInt(timeValue.getText().toString());
 		
+		Log.e(DEBUG_TAG, "Just before value of hour");
+		Log.e(DEBUG_TAG, timeValue.getText().toString());
+		Log.e(DEBUG_TAG, "Just After Value of hour");
+		int alarm_hour = Integer.parseInt(timeValue.getText().toString());
+		Log.e(DEBUG_TAG,Integer.toString(alarm_hour));
 		if(atTime.isChecked()){
 			alarm_min = 0;
 		}else if(five_before.isChecked()){
@@ -183,22 +189,30 @@ public void timerAlert(View v) {
 		int required_day = 0;
 		String fromDB = dayTextView.getText().toString();
         
-        if(fromDB == "Monday"){
+		Log.e(DEBUG_TAG, "Just before value of day");
+		Log.e(DEBUG_TAG, fromDB);
+		Log.e(DEBUG_TAG, "Just After Value of day");
+		
+        if(fromDB.equals("Monday")){
         required_day = Calendar.MONDAY;
         offset = 2;
-        }else if(fromDB == "Tuesday"){       
+        }else if(fromDB.equals("Tuesday")){     
+    		Log.e(DEBUG_TAG, "Got into tuesday debug setter");
+
             required_day = Calendar.TUESDAY;
             offset = 3;
-        }else if(fromDB == "Wednesday"){       
+        }else if(fromDB.equals("Wednesday")){       
             required_day = Calendar.WEDNESDAY;
             offset = 4;
-        }else if(fromDB == "Thursday"){       
+        }else if(fromDB.equals("Thursday")){       
             required_day = Calendar.THURSDAY;
             offset = 5;
-        }else if(fromDB == "Friday"){
+        }else if(fromDB.equals("Friday")){
         	required_day = Calendar.FRIDAY;
             offset = 6;
         }
+        
+        now.setTimeZone(TimeZone.getTimeZone("GMT"));
 		
         if (weekday != required_day)
         {
@@ -206,6 +220,8 @@ public void timerAlert(View v) {
             // the 2 is the difference between Saturday and Monday
             int dayes = (Calendar.SATURDAY - weekday + offset) % 7;
             now.add(Calendar.DAY_OF_YEAR, dayes);
+            Log.e(DEBUG_TAG, "Check Alarm Hour At this point");
+            Log.e(DEBUG_TAG, Integer.toString(alarm_hour));
             now.set(Calendar.HOUR_OF_DAY, alarm_hour);
             now.set(Calendar.MINUTE, alarm_min);
         }else{
@@ -220,12 +236,14 @@ public void timerAlert(View v) {
         }
 		
 		
-		
+        Log.e(DEBUG_TAG, "Just before value of timeValue");
+		Log.e(DEBUG_TAG, Long.toString(now.getTimeInMillis()));
+		Log.e(DEBUG_TAG, "Just After Value of timeValue");
 		
 		
 		
 		myAlarmManager.set(AlarmManager.RTC_WAKEUP, now.getTimeInMillis(), myPendingIntent);
-		myAlarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+(i*1000), myPendingIntent);
+		//myAlarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+(i*1000), myPendingIntent);
 
 		
 		

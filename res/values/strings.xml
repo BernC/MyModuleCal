@@ -34,7 +34,10 @@
     <string name="fifteen_before">15 Before</string>
     <string name="alarm_options">Alarm Options</string>
     <string name="mod_type">Type</string>
-            
+
+    <string name="light_theme">Light</string>
+    <string name="dark_theme">Dark</string>
+    <string name="access_theme">Large</string>
     <color name="orange">#FF7F00</color>
     
     
@@ -84,6 +87,9 @@
     
 
     <string name="mod_comments">Comments: </string>
+    
+
+    <string name="theme_selections">Select a Theme</string>
     
 
     

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="BlackTheme" parent="@android:style/Theme.Holo.Light" >
+    <style name="DarkTheme" parent="@android:style/Theme.Holo.Light" >
 
 <item name="android:background">#000000</item>
 
@@ -8,15 +8,25 @@
 
 </style>
 
-    <style name="BlueTheme"  parent="@android:style/Theme.Holo.Light" >
+    <style name="LightTheme"  parent="@android:style/Theme.Holo.Light" >
+
+<item name="android:background">#FFFFFF</item>
+
+<item name="android:textColor">#000000</item>
+
+<item name="android:typeface">serif</item>
+
+</style>
+
+    
+        <style name="AccessibleTheme"  parent="@android:style/Theme.Holo.Light" >
 
 <item name="android:background">#B0E0E6</item>
-
 
 <item name="android:textColor">#00FF00</item>
 
 <item name="android:typeface">monospace</item>
 
 </style>
-
+    
 </resources>

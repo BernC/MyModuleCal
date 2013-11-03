@@ -186,6 +186,7 @@ public  ArrayList<HashMap<String, String>> getTodaysModules(String day,String ti
 				moduleMap.put("finishTime", cursor.getString(6));
 				moduleMap.put("Location", cursor.getString(7));
 				moduleMap.put("addComments", cursor.getString(8));
+				moduleMap.put("timeValue", cursor.getString(9));
 				
 			}while(cursor.moveToNext());
 		}

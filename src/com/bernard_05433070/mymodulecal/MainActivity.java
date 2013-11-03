@@ -26,6 +26,7 @@ public class MainActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		themeUtils.onActivityCreateSetTheme(this);
 		setContentView(R.layout.activity_main);
 		
 		
@@ -73,8 +74,21 @@ public class MainActivity extends ListActivity {
 	
 	public void setTheme(View v){
 		
-		getApplication().setTheme(R.style.BlackTheme);
-		recreate();
+		switch(v.getId()){
+		case R.id.lightTheme:
+		//handle light
+			themeUtils.changeToTheme(this, themeUtils.THEME_BLUE);
+		break;
+		case R.id.darkTheme:
+			//handle dark
+			themeUtils.changeToTheme(this, themeUtils.THEME_WHITE);
+		break;
+		case R.id.largeTheme:
+			//handle Large
+			themeUtils.changeToTheme(this, themeUtils.THEME_DEFAULT);
+		break;
+		}
+		
 	}
 
 	@Override

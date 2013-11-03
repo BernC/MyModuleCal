@@ -11,16 +11,16 @@
 
     <TableRow
         android:id="@+id/tableRow1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
 
         <Button
             android:id="@+id/insertButton"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:onClick="addModule"
             android:text="@string/add_module_btn"
-            android:background="@drawable/rounded_buttons" />
+             />
 
     </TableRow>
 
@@ -38,18 +38,41 @@
 	     </ListView>
 	     </TableRow>
 
+	     <TextView
+	         android:id="@+id/textView1"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:text="@string/theme_selections" />
+
     <TableRow
         android:id="@+id/tableRow3"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
 
         <Button
-            android:id="@+id/deleteButton"
-            android:layout_width="wrap_content"
+            android:id="@+id/lightTheme"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:onClick="setTheme"
-            android:background="@drawable/rounded_buttons"
-            android:text="@string/pref_btn" />
+            android:text="@string/light_theme" />
+
+        <Button
+            android:id="@+id/darkTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="setTheme"
+            android:text="@string/dark_theme" />
+
+        <Button
+            android:id="@+id/largeTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="setTheme"
+            android:text="@string/access_theme" />
+
     </TableRow>
 
 </TableLayout>

@@ -46,18 +46,16 @@ public final class R {
         public static final int atTimeAlarm=0x7f0c0027;
         public static final int btm_row=0x7f0c002f;
         public static final int btn_holder=0x7f0c000b;
-        public static final int button1=0x7f0c002d;
-        public static final int button2=0x7f0c002e;
         public static final int button3=0x7f0c0030;
         public static final int button4=0x7f0c0031;
         public static final int button_container=0x7f0c002b;
         public static final int commentTextView=0x7f0c0023;
+        public static final int darkTheme=0x7f0c0036;
         public static final int daySpinner=0x7f0c0003;
         public static final int dayTextView=0x7f0c001e;
         public static final int dbCodeTextView=0x7f0c003f;
         public static final int dbDisplayCodeTextView=0x7f0c0024;
         public static final int debug=0x7f0c0025;
-        public static final int deleteButton=0x7f0c0036;
         public static final int fifteenBeforeAlarm=0x7f0c002a;
         public static final int finishTextView=0x7f0c001d;
         public static final int firstLetterTextView=0x7f0c003a;
@@ -65,7 +63,9 @@ public final class R {
         public static final int full_widget=0x7f0c0040;
         public static final int info_table=0x7f0c000d;
         public static final int insertButton=0x7f0c000c;
+        public static final int largeTheme=0x7f0c002d;
         public static final int lectureRadio=0x7f0c0009;
+        public static final int lightTheme=0x7f0c002e;
         public static final int locationMiniTextView=0x7f0c003e;
         public static final int locationTextView=0x7f0c0021;
         public static final int location_row=0x7f0c001f;
@@ -129,6 +129,7 @@ public final class R {
         public static final int bell_ringing_04=0x7f050000;
     }
     public static final class string {
+        public static final int access_theme=0x7f070023;
         public static final int action_settings=0x7f070001;
         public static final int add_comments=0x7f07000c;
         public static final int add_module_btn=0x7f070002;
@@ -138,6 +139,7 @@ public final class R {
         public static final int cancel_alarm=0x7f070016;
         public static final int cancel_deletion=0x7f070014;
         public static final int confirm_deletion=0x7f070013;
+        public static final int dark_theme=0x7f070022;
         public static final int day_of_week=0x7f070008;
         public static final int delete_button=0x7f070010;
         public static final int deletion_dialog=0x7f070012;
@@ -147,8 +149,9 @@ public final class R {
         public static final int five_before=0x7f07001c;
         public static final int hello_world=0x7f07000e;
         public static final int insert_button=0x7f07000f;
+        public static final int light_theme=0x7f070021;
         public static final int location=0x7f07000b;
-        public static final int mod_comments=0x7f070022;
+        public static final int mod_comments=0x7f070025;
         public static final int mod_type=0x7f070020;
         public static final int module_code=0x7f070004;
         public static final int module_name=0x7f070005;
@@ -158,14 +161,16 @@ public final class R {
         public static final int set_alarm=0x7f070015;
         public static final int start_time=0x7f070009;
         public static final int ten_before=0x7f07001d;
+        public static final int theme_selections=0x7f070026;
         public static final int title_activity_add_module=0x7f07000d;
-        public static final int title_activity_display_module=0x7f070021;
+        public static final int title_activity_display_module=0x7f070024;
         public static final int widget_default=0x7f070019;
         public static final int widget_default_loc=0x7f07001a;
         public static final int widget_label=0x7f070018;
         public static final int widget_title=0x7f070017;
     }
     public static final class style {
+        public static final int AccessibleTheme=0x7f0a0005;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -192,8 +197,9 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f0a0001;
-        public static final int BlackTheme=0x7f0a0002;
-        public static final int BlueTheme=0x7f0a0003;
+        public static final int DarkTheme=0x7f0a0003;
+        public static final int LightTheme=0x7f0a0004;
+        public static final int text_large_bl=0x7f0a0002;
     }
     public static final class xml {
         public static final int modulecal_appwidget=0x7f040000;

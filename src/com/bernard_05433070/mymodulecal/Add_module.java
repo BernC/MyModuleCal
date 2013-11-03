@@ -42,6 +42,7 @@ public class Add_module extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		themeUtils.onActivityCreateSetTheme(this);
 		setContentView(R.layout.activity_add_module);
 		// Show the Up button in the action bar.
 		setupActionBar();
