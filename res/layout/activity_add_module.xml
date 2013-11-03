@@ -15,6 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:maxLines="1"
+        android:maxLength="23"
         android:hint="@string/module_code" >
 
         <requestFocus />
@@ -25,32 +27,84 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:maxLines="1"
+        android:maxLength="23"
         android:hint="@string/module_name" />
 
-    <Spinner
-        android:id="@+id/daySpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/lecture_days" />
+    <TableLayout
+        android:id="@+id/spinner_table"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
 
-    <Spinner
-        android:id="@+id/timeStartSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-         android:entries="@array/lecture_hours" />
+        <TableRow
+            android:id="@+id/day_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
 
-    <Spinner
-        android:id="@+id/timeFinishedSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:prompt="@string/finish_time"
-         android:entries="@array/lecture_hours" />
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/day_of_week" />
+
+            <Spinner
+                android:id="@+id/daySpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:entries="@array/lecture_days" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/start_time_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/start_time" />
+
+            <Spinner
+                android:id="@+id/timeStartSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:entries="@array/lecture_hours" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/finish_time_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/finish_time" />
+
+            <Spinner
+                android:id="@+id/timeFinishedSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:entries="@array/lecture_hours"
+                android:prompt="@string/finish_time" />
+        </TableRow>
+    </TableLayout>
 
     <EditText
         android:id="@+id/addRoomEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:maxLength="23"
+        android:maxLines="1"
         android:hint="@string/location" />
 
     <EditText
@@ -58,12 +112,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/add_comments" />
+        android:hint="@string/add_comments"
+        android:maxLines="2"
+        android:minLines="2"
+        android:scrollbars="vertical" />
 
     <RadioGroup
         android:id="@+id/radioGroup1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
         <RadioButton
             android:id="@+id/lectureRadio"
@@ -80,20 +138,11 @@
             android:text="@string/radio_practical" />
     </RadioGroup>
 
-    <LinearLayout
-        android:id="@+id/btn_holder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/insertButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="insertModule"
-            android:text="@string/insert_button"
-            android:background="@drawable/rounded_buttons" />
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/insertButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="insertModule"
+        android:text="@string/insert_button" />
 
 </LinearLayout>

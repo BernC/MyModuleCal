@@ -1,57 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/moduleMiniView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent" >
 
-    <LinearLayout
-        android:id="@+id/upper_row"
-        android:layout_width="fill_parent"
+    <TableRow
+        android:id="@+id/mod_code_row_main"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/module_code" />
 
         <TextView
             android:id="@+id/modMiniCodeTextView"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/firstLetterTextView"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="TextView" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/lower_row"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-         >
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/when_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/when_string" />
 
         <TextView
             android:id="@+id/shortDayTextView"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/startTimeTextView"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:text="TextView" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/where_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/where_string" />
+
+        <TextView
+            android:id="@+id/locationMiniTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView" />
-    
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/locationMiniTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+    </TableRow>
 
     <TextView
         android:id="@+id/dbCodeTextView"
@@ -59,4 +81,4 @@
         android:layout_height="0dp"
         android:visibility="gone" />
 
-</LinearLayout>
+</TableLayout>

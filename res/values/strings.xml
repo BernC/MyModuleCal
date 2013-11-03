@@ -5,16 +5,16 @@
     <string name="action_settings">Settings</string>
     <string name="add_module_btn">Add New Module</string>
     <string name="pref_btn">Change Display Preferences</string>
-    <string name="module_code">Module Code</string>
+    <string name="module_code">Module Code: </string>
     <string name="module_name">Full Module name</string>
     <string name="radio_lecture">Lecture</string>
     <string name="radio_practical">Practical</string>
-    <string name="day_of_week">Day of Week</string>
-    <string name="start_time">Start Time</string>
-    <string name="finish_time">End Time</string>
+    <string name="day_of_week">Day of Week: </string>
+    <string name="start_time">Start Time: </string>
+    <string name="finish_time">End Time: </string>
     <string name="location">Location</string>
     <string name="add_comments">Comments</string>
-    <string name="title_activity_add_module">Add_module</string>
+    <string name="title_activity_add_module">Add New Module</string>
     <string name="hello_world">Hello world!</string>
     <string name="insert_button">Insert</string>
     <string name="delete_button">Delete</string>
@@ -23,15 +23,15 @@
     <string name="confirm_deletion">OK</string>
     <string name="cancel_deletion">Cancel</string>
     <string name="set_alarm">Set Alarm</string>
-    <string name="cancel_alarm">Cancel Alarm</string>
+    <string name="cancel_alarm">Cancel</string>
     <string name="widget_title">Next Module</string>
     <string name="widget_label">Location</string>
     <string name="widget_default">Next Module</string>
     <string name="widget_default_loc">Location</string>
     <string name="at_time">At Time</string>
-    <string name="five_before">5 Before</string>
-    <string name="ten_before">10 Before</string>
-    <string name="fifteen_before">15 Before</string>
+    <string name="five_before">5 Minutes Before Start</string>
+    <string name="ten_before">10 Minutes Before Start</string>
+    <string name="fifteen_before">15 Minutes Before Start</string>
     <string name="alarm_options">Alarm Options</string>
     <string name="mod_type">Type</string>
 
@@ -83,13 +83,25 @@
       <color name="bg_color">#E5E4E2</color> 
     
 
-    <string name="title_activity_display_module">DisplayModuleActivity</string>
+    <string name="title_activity_display_module">Module Information</string>
     
 
     <string name="mod_comments">Comments: </string>
     
 
     <string name="theme_selections">Select a Theme</string>
+    
+
+    <string name="mod_name">"Module Name: "</string>
+    
+
+    <string name="when_string">"When: "</string>
+    
+
+    <string name="where_string">"Where: "</string>
+    
+
+    <string name="reminder_text">Set A Reminder For This Module</string>
     
 
     
