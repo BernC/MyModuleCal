@@ -185,7 +185,7 @@ public final class R {
         public static final int widget_title=0x7f080017;
     }
     public static final class style {
-        public static final int AccessibleTheme=0x7f0a0005;
+        public static final int AccessibleTheme=0x7f0a0006;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -212,8 +212,9 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f0a0001;
-        public static final int DarkTheme=0x7f0a0003;
-        public static final int LightTheme=0x7f0a0004;
+        public static final int DarkTheme=0x7f0a0004;
+        public static final int LightTheme=0x7f0a0005;
+        public static final int darkButton=0x7f0a0003;
         public static final int text_large_bl=0x7f0a0002;
     }
     public static final class xml {

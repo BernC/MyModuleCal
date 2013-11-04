@@ -24,19 +24,22 @@ public class themeUtils
 		activity.startActivity(new Intent(activity, activity.getClass()));
 	}
 
-	/** Set the theme of the activity, according to the configuration. */
-	public static void onActivityCreateSetTheme(Activity activity)
+	/** Set the theme of the activity, according to the configuration. 
+	 * @param themechoice */
+	public static void onActivityCreateSetTheme(Activity activity, String themechoice)
 	{
-		switch (sTheme)
+		int choice = Integer.parseInt(themechoice);
+		switch (choice)
 		{
 		default:
-		case THEME_DEFAULT:
-			break;
-		case THEME_WHITE:
+		case 1:
 			activity.setTheme(R.style.DarkTheme);
 			break;
-		case THEME_BLUE:
+		case 2:
 			activity.setTheme(R.style.LightTheme);
+			break;
+		case 3:
+			activity.setTheme(R.style.AccessibleTheme);
 			break;
 		}
 	}

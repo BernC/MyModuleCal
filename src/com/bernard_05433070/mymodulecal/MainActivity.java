@@ -4,9 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,17 +20,24 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends ListActivity implements OnSharedPreferenceChangeListener {
 	
 	Intent myIntent;
 	TextView contactId;
+	String themechoice;
+	
+	public static final String DEBUG_TAG = "Main_Activity";
+
 	
 	DBTools dbtools = new DBTools(this);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		themeUtils.onActivityCreateSetTheme(this);
+		themechoice = loadpreference();
+		Log.e(DEBUG_TAG, themechoice);
+		
+		themeUtils.onActivityCreateSetTheme(this,themechoice);
 		setContentView(R.layout.activity_main);
 		
 		
@@ -72,8 +83,18 @@ public class MainActivity extends ListActivity {
 		startActivity(myIntent);
 	}
 	
-	public void setTheme(View v){
+
 		
+		public void setTheme(View v){
+			
+			Intent prefIntent = new Intent(this, EditPreferences.class);
+			startActivity(prefIntent);
+			
+
+			
+		}
+		
+		/*
 		switch(v.getId()){
 		case R.id.lightTheme:
 		//handle light
@@ -89,13 +110,33 @@ public class MainActivity extends ListActivity {
 		break;
 		}
 		
-	}
+		*/
+		
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+	}
+	
+	private String loadpreference() {
+		
+		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+		
+		String j = settings.getString("theme_choices", "1");
+		
+		settings.registerOnSharedPreferenceChangeListener(MainActivity.this);
+		
+		return j;
+	}
+
+	@Override
+	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
+			String key) {
+		
+		recreate();
 	}
 
 }

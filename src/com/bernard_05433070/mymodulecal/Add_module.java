@@ -18,7 +18,9 @@ import android.widget.Spinner;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
+import android.preference.PreferenceManager;
 
 public class Add_module extends Activity {
 	
@@ -42,7 +44,9 @@ public class Add_module extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		themeUtils.onActivityCreateSetTheme(this);
+		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());		
+		String themechoice = settings.getString("theme_choices", "1");
+		themeUtils.onActivityCreateSetTheme(this,themechoice);
 		setContentView(R.layout.activity_add_module);
 		// Show the Up button in the action bar.
 		setupActionBar();
