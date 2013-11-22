@@ -1,5 +1,7 @@
 package com.bernard_05433070.mymodulecal;
 
+//based off tutorial from here http://mobile.tutsplus.com/tutorials/android/android-essentials-enhancing-your-applications-with-app-widgets/
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -18,6 +20,7 @@ public class ModuleCalWidgetProvider extends AppWidgetProvider {
 	
 	public static final String DEBUG_TAG = "ModCalWidgetProvider";
 	
+	//this is the code used to update the widget at specified intervals
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds){
 				
 		try{
@@ -27,9 +30,11 @@ public class ModuleCalWidgetProvider extends AppWidgetProvider {
 		}
 	}
 
+	
 	private void updateWidgetContent(Context context,
 			AppWidgetManager appWidgetManager) {
-
+		
+		//remote views are reuired to set content for widgets
 		RemoteViews remoteView = new RemoteViews(context.getPackageName(),R.layout.modulecal_appwidget_layout);
 		
 		DBTools dbtools = new DBTools(context);
@@ -38,6 +43,7 @@ public class ModuleCalWidgetProvider extends AppWidgetProvider {
 		
 		int day;
 		
+		//code used to figure out what day of week it is
 		Calendar calendar = Calendar.getInstance();
 		day = calendar.get(Calendar.DAY_OF_WEEK);
 		String dayString;
@@ -58,19 +64,19 @@ public class ModuleCalWidgetProvider extends AppWidgetProvider {
 		break;
 		}
 		
-		int time = calendar.get(Calendar.HOUR_OF_DAY);
-		String hourString = "16";
-		int checje = Integer.parseInt(hourString);
 		
+		int time = calendar.get(Calendar.HOUR_OF_DAY);
+		String hourString = Integer.toString(time);
+		//int checje = Integer.parseInt(hourString);
+		
+		//search for a module which is due today but has not started yet
 		ArrayList<HashMap <String, String>> moduleList = dbtools.getTodaysModules(dayString,hourString);
 			
 		
 		HashMap<String, String> checker = moduleList.get(0);
 		
-		//Log.e(DEBUG_TAG, checker.get("moduleName"));
 		
-		Log.e(DEBUG_TAG,checker.get("startTime"));
-		
+		//set the widget text views as appropriate
 		remoteView.setTextViewText(R.id.widgetModName, checker.get("moduleName"));
 		remoteView.setTextViewText(R.id.widgetStartTime, checker.get("startTime"));
 		remoteView.setTextViewText(R.id.widgetLocation, checker.get("Location"));
@@ -84,29 +90,6 @@ public class ModuleCalWidgetProvider extends AppWidgetProvider {
 		appWidgetManager.updateAppWidget(ModuleCalWidget, remoteView);
 		
 	}
-	/*
-	private void insertStockInScrollView(String modName, String modTime, int arrayIndex, Context context){
-		
-		// Get the LayoutInflator service
-		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		
-		// Use the inflater to inflate a stock row from stock_quote_row.xml
-		View newWidgetRow = inflater.inflate(R.layout.row, null);
-		
-		// Create the TextView for the ScrollView Row
-		TextView newModNameTextView = (TextView) newWidgetRow.findViewById(R.id.widgetModNameTextView);
-		TextView newModTimeTextView = (TextView) newWidgetRow.findViewById(R.id.widgetModTimeTextView);
 
-		
-		// Add the stock symbol to the TextView
-		newModNameTextView.setText(modName);
-		newModTimeTextView.setText(modTime);
-		
-		
-		// Add the new components for the stock to the TableLayout
-		stockTableScrollView.addView(newStockRow, arrayIndex);
-		
-	}
-	*/
 
 }

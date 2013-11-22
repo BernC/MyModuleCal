@@ -6,10 +6,10 @@
     <string name="add_module_btn">Add New Module</string>
     <string name="pref_btn">Change Display Preferences</string>
     <string name="module_code">Module Code: </string>
-    <string name="module_name">Full Module name</string>
+    <string name="module_name">Full Module Name: </string>
     <string name="radio_lecture">Lecture</string>
     <string name="radio_practical">Practical</string>
-    <string name="day_of_week">Day of Week: </string>
+    <string name="day_of_week">Day: </string>
     <string name="start_time">Start Time: </string>
     <string name="finish_time">End Time: </string>
     <string name="location">Location</string>
@@ -36,7 +36,7 @@
     <string name="mod_type">Type</string>
 
     <string name="light_theme">Light</string>
-    <string name="dark_theme">Dark</string>
+    <string name="dark_theme">Select A Theme</string>
     <string name="access_theme">Large</string>
     <color name="orange">#FF7F00</color>
     
@@ -101,7 +101,7 @@
     <string name="where_string">"Where: "</string>
     
 
-    <string name="reminder_text">Set A Reminder For This Module</string>
+    <string name="reminder_text">Remind Before Start </string>
     
 
     

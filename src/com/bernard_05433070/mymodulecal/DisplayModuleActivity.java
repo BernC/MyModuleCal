@@ -56,6 +56,7 @@ public class DisplayModuleActivity extends Activity {
 	DBTools dbtools = new DBTools(this);
 	
 	String id;
+	//alarm id used to give a unique id to each alarm intent set up
 	int alarmId;
 
 	@Override
@@ -72,7 +73,7 @@ public class DisplayModuleActivity extends Activity {
 		//get the intent which started this activity
 		Intent myIntent = getIntent();
 		
-		//possible troublemaker
+		//get module id for db lookup
 		id = myIntent.getStringExtra("moduleId");
 		
 		Log.e(DEBUG_TAG, id);
@@ -95,6 +96,7 @@ public class DisplayModuleActivity extends Activity {
 			
 		HashMap <String, String> moduleDetails = dbtools.getModule(id);
 		moduleName = moduleDetails.get("moduleName");
+		
 		alarmId = Integer.parseInt(id);
 		
 		modCodeTextView.setText(moduleDetails.get("moduleCode")); 
@@ -113,11 +115,13 @@ public class DisplayModuleActivity extends Activity {
 	
 	public void deleteEntry(View v){
 		
+		//alert dialog code adapted from official google tutorials
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(getString(R.string.deletion_dialog))
                .setPositiveButton(getString(R.string.confirm_deletion), new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id3) {
                        
+                	   //delete module and return to main activity
                   		dbtools.deleteContact(id);
                 		Intent myIntent = new Intent(getApplication(), MainActivity.class);
                 		startActivity(myIntent);
@@ -140,7 +144,6 @@ public class DisplayModuleActivity extends Activity {
 		Intent editIntent = new Intent(getApplication(), Add_module.class);
 		
 		//send the mod db id
-		Log.e(DEBUG_TAG, id);
 		editIntent.putExtra("moduleId",id);
 		
 		//callIntent
@@ -159,21 +162,23 @@ public void timerAlert(View v) {
 
 		int i = 10;
 		
+		//alarm code adapted from examples in Android for absolute beginners p284 to p297
+		
 		Intent timerIntent = new Intent(this,TimerBroadcastReceiver.class);
 		timerIntent.putExtra("moduleName", moduleName);
 		
 		PendingIntent myPendingIntent = PendingIntent.getBroadcast(this.getApplicationContext(), alarmId, timerIntent, 0);
 		
+		//alarm manager used to set future alert
 		AlarmManager myAlarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 		
+		//Calendar instance will be used to determine the time alarm will go off at
 		Calendar now = Calendar.getInstance();
         int weekday = now.get(Calendar.DAY_OF_WEEK);
 		
 		int alarm_min;
 		
-		Log.e(DEBUG_TAG, "Just before value of hour");
-		Log.e(DEBUG_TAG, timeValue.getText().toString());
-		Log.e(DEBUG_TAG, "Just After Value of hour");
+		// date retrieval code adapted from posts on http://www.coderanch.com/t/385117/java/java/date-Monday
 		int alarm_hour = Integer.parseInt(timeValue.getText().toString());
 		Log.e(DEBUG_TAG,Integer.toString(alarm_hour));
 		if(atTime.isChecked()){
@@ -215,7 +220,7 @@ public void timerAlert(View v) {
         	required_day = Calendar.FRIDAY;
             offset = 6;
         }
-        
+        //required to prevent alarms from being set 4 hours off
         now.setTimeZone(TimeZone.getTimeZone("GMT"));
 		
         if (weekday != required_day)
@@ -240,27 +245,24 @@ public void timerAlert(View v) {
         }
 		
 		
-        Log.e(DEBUG_TAG, "Just before value of timeValue");
-		Log.e(DEBUG_TAG, Long.toString(now.getTimeInMillis()));
-		Log.e(DEBUG_TAG, "Just After Value of timeValue");
 		
-		
-		
+		//setting alarm , time off from milliseconds is required
 		myAlarmManager.set(AlarmManager.RTC_WAKEUP, now.getTimeInMillis(), myPendingIntent);
 		//myAlarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+(i*1000), myPendingIntent);
 
 		
-		
+		//user confirmation popup
 		Toast.makeText(this, "Alarm has been Set", Toast.LENGTH_LONG).show();
 	}
 
 public void cancelAlarm(View v) {
 	
+	//to cancel an alarm a duplicate of it must be created. This is why the module id is used as a unique identifier
 	int i = 10;
 	
 	Intent timerIntent = new Intent(this,TimerBroadcastReceiver.class);
 	timerIntent.putExtra("moduleName", moduleName);
-	
+	//cancel alarm and display popup to user
 	PendingIntent myPendingIntent = PendingIntent.getBroadcast(this.getApplicationContext(), alarmId, timerIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 	Toast.makeText(this, "Alarm Cancelled", Toast.LENGTH_LONG).show();
 	

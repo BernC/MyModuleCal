@@ -1,5 +1,7 @@
 package com.bernard_05433070.mymodulecal;
 
+//class adapted from new thinktank tutorials here http://www.newthinktank.com/2013/06/android-development-tutorial-12/
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -19,7 +21,7 @@ public class DBTools extends SQLiteOpenHelper{
 
 	@Override
 	public void onCreate(SQLiteDatabase database) {
-		
+		//create tables
 		String query = "CREATE TABLE modules ( moduleID INTEGER PRIMARY KEY AUTOINCREMENT, moduleCode TEXT, moduleName TEXT, LectureOrPractical TEXT, day TEXT, startTime TEXT, finishTime TEXT, Location TEXT, addComments TEXT, timeValue INT)";
 		
 		database.execSQL(query);
@@ -37,6 +39,7 @@ public class DBTools extends SQLiteOpenHelper{
 	}
 	
 	public void insertModule(HashMap<String, String> queryValues) {
+		//add a new module
 		
 		SQLiteDatabase database = this.getWritableDatabase();
 		
@@ -62,6 +65,7 @@ public class DBTools extends SQLiteOpenHelper{
 	
 	public int updateContact(HashMap<String, String> queryValues,String key){
 		
+		//update a module
 		SQLiteDatabase database = this.getWritableDatabase();
 		
 		ContentValues values = new ContentValues();
@@ -82,7 +86,7 @@ public class DBTools extends SQLiteOpenHelper{
 	}
 	
 	public void deleteContact(String id){
-		
+		//delete a module
 		SQLiteDatabase database = this.getWritableDatabase();
 		
 		String deleteQuery = "DELETE FROM modules WHERE moduleID='" + id + "'";
@@ -109,9 +113,11 @@ public class DBTools extends SQLiteOpenHelper{
 				moduleMap.put("moduleId", cursor.getString(0));
 				moduleMap.put("moduleCode", cursor.getString(1));
 				moduleMap.put("moduleName", cursor.getString(2));
+				//output altered to return only first letter of lecture practical
 				char Letter = cursor.getString(3).charAt(0);
 				String firstLetter = String.valueOf(Letter);
 				moduleMap.put("LectureOrPractical", firstLetter);
+				//output altered to return short form of day
 				String shortDay = cursor.getString(4).substring(0,3);
 				moduleMap.put("day", shortDay);
 				moduleMap.put("startTime", cursor.getString(5));
@@ -131,6 +137,7 @@ public class DBTools extends SQLiteOpenHelper{
 	
 public  ArrayList<HashMap<String, String>> getTodaysModules(String day,String time){
 		
+	//get all specific module from the db based on the day and time.. used to power widget
 		SQLiteDatabase database = this.getReadableDatabase();
 		
 		ArrayList<HashMap<String, String>> moduleArrayList;
@@ -166,6 +173,7 @@ public  ArrayList<HashMap<String, String>> getTodaysModules(String day,String ti
 	
 	public HashMap <String, String> getModule(String id){
 		
+		//return a single requested module, note full name and type are retuned
 		SQLiteDatabase database = this.getReadableDatabase();
 		
 		HashMap<String, String> moduleMap = new HashMap<String, String>();

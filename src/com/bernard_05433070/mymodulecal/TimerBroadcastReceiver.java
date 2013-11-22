@@ -8,6 +8,7 @@ import android.media.MediaPlayer;
 import android.os.Vibrator;
 import android.widget.Toast;
 
+//adapted from examples in android for absolute beginners
 public class TimerBroadcastReceiver extends BroadcastReceiver {
 	
 	MediaPlayer mp = null;

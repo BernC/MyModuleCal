@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 public class EditPreferences extends PreferenceActivity { 
 	
+	//every tutorial i could find advised using this method despite it being deprecated??
 	@SuppressWarnings("deprecation")
 	public void onCreate(Bundle savedInstanceState) {    
 

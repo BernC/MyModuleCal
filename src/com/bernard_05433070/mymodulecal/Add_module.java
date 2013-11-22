@@ -44,6 +44,7 @@ public class Add_module extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//Check what theme to use
 		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());		
 		String themechoice = settings.getString("theme_choices", "1");
 		themeUtils.onActivityCreateSetTheme(this,themechoice);
@@ -64,13 +65,14 @@ public class Add_module extends Activity {
 		Intent myIntent = getIntent();
 		module_to_edit = myIntent.getStringExtra("moduleId");
 		
+		//try catch block to see whether a new module is being created or existing one edited
 		try{
 		id = Integer.parseInt(module_to_edit);
 		}catch (Exception e){
 			id = 0;
 		}
 		
-		Log.e(DEBUG_TAG, "got to just outside if");
+		//Inelegant way of determining the index of items in the UI spinners
     	ArrayList<String> days = new ArrayList<String>();
     	
     	days.add("Monday");
@@ -94,7 +96,7 @@ public class Add_module extends Activity {
         hours.add("19.00");
 		
 		if(id != 0){
-			Log.e(DEBUG_TAG, "got in here");
+			//get module
 			HashMap <String, String> moduleDetails = dbTools.getModule(module_to_edit);
 			
 			addModCodeEditText.setText(moduleDetails.get("moduleCode")); 
@@ -105,6 +107,7 @@ public class Add_module extends Activity {
 			timeFinishedSpinner.setSelection(hours.indexOf(moduleDetails.get("finishTime")));
 			daySpinner.setSelection(days.indexOf(moduleDetails.get("day")));
 			
+			//set the radiobutton as appropriate
 			if(moduleDetails.get("LectureOrPractical") == "Practical"){
 				buttonPractical.setChecked(true);
 			}else{
